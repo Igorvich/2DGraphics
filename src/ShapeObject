@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.awt.geom.GeneralPath;
+
+import javax.swing.*;
+
+
+public class Shape extends JPanel
+{
+	
+	public Shape()
+	{
+		setPreferredSize(new Dimension(640,480));
+		setBackground(Color.white);
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		super.paintComponent(g);
+		Graphics2D g2 = (Graphics2D)g;
+		g2.translate(200,200);
+		GeneralPath path = new GeneralPath(GeneralPath.WIND_NON_ZERO);
+		path.setWindingRule(GeneralPath.WIND_EVEN_ODD);
+		path.moveTo(0,0);
+		path.lineTo(0,20);
+		path.lineTo(40,20);
+		path.lineTo(40,-20);
+		path.lineTo(50,-20);
+		path.lineTo(50,0);
+		path.closePath();
+		
+		path.moveTo(10,-10); //0
+		path.lineTo(10,10); //1
+		path.lineTo(-20, 10); //2
+		path.lineTo(-20, -20); //3
+		path.lineTo(30, -20); //4
+		path.lineTo(30, 30); //5
+		path.lineTo(-10, 30); //6
+		path.lineTo(-10, 0); //7
+		path.lineTo(-30, 0); //8
+		path.lineTo(-30, -10); //9
+		path.closePath();
+
+		g2.fill(path);
+		g2.draw(path);
+	}
+}

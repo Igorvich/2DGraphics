@@ -1,0 +1,43 @@
+import java.awt.*;
+import javax.swing.*;
+import java.awt.geom.*;
+
+
+public class AffineTransform extends JPanel
+{
+	/**
+	 * 
+	 */
+	private static final long	serialVersionUID	= 1L;
+
+	public AffineTransform()
+	{
+		setBackground(Color.white);
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		super.paintComponent(g);
+		Graphics2D g2 = (Graphics2D)g;
+		Rectangle2D rect = new Rectangle2D.Double(50,200,100,100);
+		g2.setColor(Color.cyan);
+		g2.fill(rect);
+		g2.draw(rect);
+		
+		GeneralPath path = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+		path.moveTo(0, 0);
+		path.lineTo(600, 600);
+		g2.setColor(Color.BLACK);
+		g2.draw(path);	
+		
+		AffineTransform tr = new AffineTransform();
+		//tr.setToRotation(Math.PI/12);
+		//Shape shape = tr.createTransformedShape(rect);
+		
+		//tr.setToIdentity();
+		//g2.setTransform(tr);
+		//g2.draw(shape);
+			
+	}	
+	
+}
