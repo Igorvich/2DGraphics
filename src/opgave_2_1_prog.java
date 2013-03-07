@@ -1,3 +1,4 @@
+import java.awt.Container;
 import java.awt.Dimension;
 
 import javax.swing.JApplet;
@@ -19,13 +20,12 @@ public class opgave_2_1_prog extends JApplet
 		JFrame frame = new JFrame();
 		frame.setTitle("don't know");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setPreferredSize(new Dimension(640, 480));
-		frame.setSize(800,800);
-		JApplet applet = new JApplet();
+		//frame.setPreferredSize(new Dimension(640, 480));
+		JApplet applet = new opgave_2_1_prog();
 		applet.init();
-		applet.setPreferredSize(new Dimension(640,480));
+		//applet.setPreferredSize(new Dimension(640,480));
 		frame.getContentPane().add(applet);
-		//frame.pack();
+		frame.pack();
 		frame.setVisible(true);
 		
 	}
@@ -33,8 +33,9 @@ public class opgave_2_1_prog extends JApplet
 	
 	public void init()
 	{
-		JPanel panel = new RandomSquare();
+		JPanel panel = new ReflectedRectangle();
 		panel.setPreferredSize(new Dimension(640,480));
-		getContentPane().add(panel);
+		Container cp = getContentPane();
+		cp.add(panel);
 	}
 }

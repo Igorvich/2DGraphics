@@ -1,41 +1,38 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.Shape;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
 
 import javax.swing.JPanel;
 
 
-public class RotatedSquare extends JPanel
+public class ReflectedRectangle extends JPanel
 {
 
-	Shape drawShape = null;
-	public RotatedSquare()
+	public ReflectedRectangle()
 	{
-		setBackground(Color.white);
+		setBackground(Color.gray);
 	}
 	
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D)g;
-		Rectangle2D rect = new Rectangle2D.Double(100,100,200,200);
+		Rectangle2D rect = new Rectangle2D.Double(100,100,100,50);
+		
+		double x = 2;
+		double y = x*2;
+		
 		
 		AffineTransform tr = new AffineTransform();
-		tr.setToRotation(Math.PI/4);
-		tr.translate(100, -200);
+		tr.setTransform(-3/5,4/5,4/5,3/5,0,0);
+		tr.translate(100, 100);
 		
 		g2.setTransform(tr);
 		
-		g2.setColor(Color.gray);
+		g2.setPaint(Color.blue);
 		g2.fill(rect);
 		g2.draw(rect);
-		
 	}
-
 }
