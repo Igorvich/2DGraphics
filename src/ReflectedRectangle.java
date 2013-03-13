@@ -12,22 +12,25 @@ public class ReflectedRectangle extends JPanel
 
 	public ReflectedRectangle()
 	{
-		setBackground(Color.gray);
+		setBackground(Color.white);
 	}
 	
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D)g;
-		Rectangle2D rect = new Rectangle2D.Double(100,100,100,50);
-		
-		double x = 2;
-		double y = x*2;
-		
+		Rectangle2D rect = new Rectangle2D.Double(0,0,100,100);
+		//g2.scale(1, 1);
+		g2.drawLine(0, 0, 500, 500);
 		
 		AffineTransform tr = new AffineTransform();
-		tr.setTransform(-3/5,4/5,4/5,3/5,0,0);
-		tr.translate(100, 100);
+		tr.translate(50,50);
+	    tr.rotate(90);
+		//tr.rotate(90);
+		//tr.scale(3, 3);
+		tr.translate(-50,-50);
+		tr.scale(3, 3);
+		
 		
 		g2.setTransform(tr);
 		

@@ -33,8 +33,8 @@ public class opgave_2_1_prog extends JApplet
 	
 	public void init()
 	{
-		JPanel panel = new ReflectedRectangle();
-		panel.setPreferredSize(new Dimension(640,480));
+		JPanel panel = new ClipString();
+		panel.setPreferredSize(new Dimension(800,800));
 		Container cp = getContentPane();
 		cp.add(panel);
 	}
