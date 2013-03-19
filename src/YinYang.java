@@ -14,7 +14,7 @@ public class YinYang extends JPanel
 	public YinYang()
 	{
 		setPreferredSize(new Dimension(640,480));
-		setBackground(Color.MAGENTA);	
+		setBackground(Color.gray);	
 	}
 
 	public void paintComponent(Graphics g)
